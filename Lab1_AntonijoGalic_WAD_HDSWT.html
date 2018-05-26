@@ -74,7 +74,7 @@
       </p>
       <p id="task1" class="w3-justify">Here is a paragraph. Create a Javascript function that will change the content to something else when the button is pressed.You can find the answer to this in the HTML Document from Lecture 1</p>
 
-      <button class="w3-button w3-black w3-margin-bottom">Task 1</button>
+      <button onClick="taskOne()" class="w3-button w3-black w3-margin-bottom">Task 1</button>
 
       <p class="w3-opacity">
         <i>Task 2</i>
@@ -179,7 +179,11 @@
   </footer>
 
 
-
+  <script>
+    function taskOne() {
+      document.getElementById('task1').innerHTML = 'I am a new paragraph in Task 1!';
+    }
+  </script>
 </body>
 
 </html>
