@@ -88,7 +88,7 @@
       </p>
       <p id="task3" class="w3-justify">Create a javascript function that will hide / show the div with the three images below when the Task 3 button is pressed. You can find the answer to this in the HTML Document from Lecture 1 HINT: The div you need to hide has id "hideTask"</p>
 
-      <button class="w3-button w3-black w3-margin-bottom">Task 3</button>
+      <button onClick="taskThree()" class="w3-button w3-black w3-margin-bottom">Task 3</button>
 
       <div id="hideTask" class="w3-row w3-padding-32">
         <div class="w3-third">
@@ -186,6 +186,16 @@
 
     function taskTwo() {
       document.getElementById('image1').setAttribute('src', 'img/javascript.png');
+    }
+
+    function taskThree() {
+      var hideShow = document.getElementById('hideTask');
+
+      if (hideShow.style.display === 'none') {
+        hideShow.style.display = 'inline-block';
+      } else {
+        hideShow.style.display = 'none';
+      }
     }
   </script>
 </body>
