@@ -117,7 +117,6 @@
 
         <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
           <div class="w3-third w3-margin-bottom">
-            <img src="../images/transform.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
             <div class="w3-container w3-white">
               <p>
                 <b>Task 4</b>
@@ -128,18 +127,16 @@
             </div>
           </div>
           <div class="w3-third w3-margin-bottom">
-            <img src="../images/goat.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
             <div class="w3-container w3-white">
               <p>
                 <b>Task 5</b>
               </p>
 
-              <p>Create a JavaScript function that will loop through an array containing any information you want. You can find the answer to this in the Document from Lecture 2.</p>
-              <button class="w3-button w3-black w3-margin-bottom">Task 5</button>
+              <p id="five">Create a JavaScript function that will loop through an array containing any information you want. You can find the answer to this in the Document from Lecture 2.</p>
+              <button onclick="taskFive()" class="w3-button w3-black w3-margin-bottom">Task 5</button>
             </div>
           </div>
           <div class="w3-third w3-margin-bottom">
-            <img src="../images/transform.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
             <div class="w3-container w3-white">
               <p>
                 <b>Task 6</b>
@@ -211,6 +208,16 @@
         text = "Great. Thanks for your input.";
       }
       alert(text.toString());
+    }
+
+    function taskFive() {
+      var languages = ["Ruby", "JavaScript", "PHP", "Python", "C", "Java"];
+      var text = "";
+      var i;
+      for (i = 0; i < languages.length; i++) {
+        text += languages[i] + "<br>";
+      }
+      document.getElementById("five").innerHTML = text;
     }
   </script>
 </body>
