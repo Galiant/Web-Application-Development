@@ -124,7 +124,7 @@
               </p>
 
               <p>Use the input box above to validate that the input is not blank when the task 4 button is pressed. You can find the answer to this in the HTML Document from Lecture 1.</p>
-              <button class="w3-button w3-black w3-margin-bottom">Task 4</button>
+              <button onclick="taskFour()" class="w3-button w3-black w3-margin-bottom">Task 4</button>
             </div>
           </div>
           <div class="w3-third w3-margin-bottom">
@@ -196,6 +196,21 @@
       } else {
         hideShow.style.display = 'none';
       }
+    }
+
+    function taskFour() {
+      var x, text;
+
+
+      x = document.getElementById("check").value;
+
+      // anything I want here behind the two slashes 
+      if (x == "") {
+        text = "Put something In";
+      } else {
+        text = "Great. Thanks for your input.";
+      }
+      alert(text.toString());
     }
   </script>
 </body>
