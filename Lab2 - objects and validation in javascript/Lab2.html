@@ -55,7 +55,7 @@
     border: 0;
     padding: 10px 10px;
     border-bottom: 1px solid #eee;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     outline: 0;
     font-size: 16px;
   }
@@ -83,6 +83,8 @@
     font-size: 18px;
     width: 70%;
     display: inline-block;
+    padding: 0 10px;
+    margin-top: 0;
   }
 </style>
 
@@ -102,6 +104,25 @@
   </div>
 
   <script>
+    var x, text, text2;
+
+    function formValidation() {
+
+      // Code to verify the name is not empty 
+      x = document.getElementById("name").value; // this gets the value of the input field 
+      if (x == "") {
+        text = "Name Can Not Be Blank";
+        var para = document.createElement("p");
+        var node = document.createTextNode(text);
+        para.appendChild(node);
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+      } else if (/\s+/.test(x)) {
+        text2 = "That is a Real Name";
+        alert(text2.toString());
+      }
+
+    }
   </script>
 
 </html>
