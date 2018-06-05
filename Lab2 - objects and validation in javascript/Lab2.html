@@ -99,14 +99,17 @@
         <div id="div2" class="alertx"></div>
 
         <input type="text" name="pass" id="pass" placeholder="Password">
-        <input type="number" name="robo" id="robo" placeholder="What is 3 + 5?">
+
+        <input type="number" name="robo" id="robo" placeholder="What is 5 + 3?">
+        <div id="div3" class="alertx"></div>
+
         <button id="submit" onclick="formValidation()">Submit</button>
       </div>
     </div>
   </div>
 
   <script>
-    var x, text, text1, text2, y, text3;
+    var x, text, text1, text2, y, text3, z, text4, text5;
 
     function formValidation() {
 
@@ -114,6 +117,7 @@
       x = document.getElementById("name").value; // this gets the value of the input field 
       if (x == "") {
         text = "Name Can Not Be Blank!";
+        // create HTML tag
         var para = document.createElement("p");
         var node = document.createTextNode(text);
         para.appendChild(node);
@@ -121,6 +125,7 @@
         element.appendChild(para);
       } else if (!(/\s+/.test(x))) {
         text1 = "Please Enter Your Name Like: FirstName LastName!";
+        // create HTML tag
         var para = document.createElement("p");
         var node = document.createTextNode(text1);
         para.appendChild(node);
@@ -129,13 +134,16 @@
       } else if (/\s+/.test(x)) {
         text2 = "This is a Real Name";
         document.getElementById("div1").innerHTML = text2;
+        // change color using javascript
         document.getElementById("div1").style.color = "green";
       }
 
+      // Get the value of the input field with id="email"
       y = document.getElementById("email").value;
-      yy = (/\S+@\S+\.\S+/.test(y));
+      yy = (/\S+@\S+\.\S+/.test(y)); //include emails in format anystring@anystring.anystring
       if (yy == false) {
         text3 = "Please Enter Valid Email!";
+        // create HTML tag
         var para = document.createElement("p");
         var node = document.createTextNode(text3);
         para.appendChild(node);
@@ -144,9 +152,25 @@
       } else if (yy == true) {
         text3 = "This is a Valid Email";
         document.getElementById("div2").innerHTML = text3;
+        // change color using javascript
         document.getElementById("div2").style.color = "green";
       }
 
+      // Get the value of the input field with id="robo" 
+      z = document.getElementById("robo").value;
+      // If x is a 8
+      if (z == 8) {
+        text4 = "You are human";
+        var para = document.createElement("p");
+        var node = document.createTextNode(text4);
+        para.appendChild(node);
+        var element = document.getElementById("div3");
+        element.appendChild(para);
+        document.getElementById("div3").style.color = "green";
+      } else if (z != 8) {
+        text5 = "Please enter a correct number!";
+        document.getElementById("div3").innerHTML = text5;
+      }
     }
   </script>
 
