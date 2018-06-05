@@ -92,7 +92,7 @@
   <div class="container">
     <div class="action-btn">
       <div class="big">
-        <input type="text" name="name" id="name" placeholder="Name">
+        <input type="text" name="name" id="name" placeholder="Full Name">
         <div id="div1" class="alertx"></div>
 
         <input type="text" name="email" id="email" placeholder="Email">
@@ -104,7 +104,7 @@
   </div>
 
   <script>
-    var x, text, text2;
+    var x, text, text1, text2;
 
     function formValidation() {
 
@@ -117,9 +117,13 @@
         para.appendChild(node);
         var element = document.getElementById("div1");
         element.appendChild(para);
-      } else if (/\s+/.test(x)) {
-        text2 = "That is a Real Name";
-        alert(text2.toString());
+      } else if (!(/\s+/.test(x))) {
+        text1 = "Please Enter Your Name Like: FirstName LastName";
+        var para = document.createElement("p");
+        var node = document.createTextNode(text1);
+        para.appendChild(node);
+        var element = document.getElementById("div1");
+        element.appendChild(para);
       }
 
     }
