@@ -80,7 +80,7 @@
 
   .alertx {
     color: red;
-    font-size: 18px;
+    font-size: 16px;
     width: 70%;
     display: inline-block;
     padding: 0 10px;
@@ -96,6 +96,8 @@
         <div id="div1" class="alertx"></div>
 
         <input type="text" name="email" id="email" placeholder="Email">
+        <div id="div2" class="alertx"></div>
+
         <input type="text" name="pass" id="pass" placeholder="Password">
         <input type="number" name="robo" id="robo" placeholder="What is 3 + 5?">
         <button id="submit" onclick="formValidation()">Submit</button>
@@ -104,26 +106,45 @@
   </div>
 
   <script>
-    var x, text, text1, text2;
+    var x, text, text1, text2, y, text3;
 
     function formValidation() {
 
       // Code to verify the name is not empty 
       x = document.getElementById("name").value; // this gets the value of the input field 
       if (x == "") {
-        text = "Name Can Not Be Blank";
+        text = "Name Can Not Be Blank!";
         var para = document.createElement("p");
         var node = document.createTextNode(text);
         para.appendChild(node);
         var element = document.getElementById("div1");
         element.appendChild(para);
       } else if (!(/\s+/.test(x))) {
-        text1 = "Please Enter Your Name Like: FirstName LastName";
+        text1 = "Please Enter Your Name Like: FirstName LastName!";
         var para = document.createElement("p");
         var node = document.createTextNode(text1);
         para.appendChild(node);
         var element = document.getElementById("div1");
         element.appendChild(para);
+      } else if (/\s+/.test(x)) {
+        text2 = "This is a Real Name";
+        document.getElementById("div1").innerHTML = text2;
+        document.getElementById("div1").style.color = "green";
+      }
+
+      y = document.getElementById("email").value;
+      yy = (/\S+@\S+\.\S+/.test(y));
+      if (yy == false) {
+        text3 = "Please Enter Valid Email!";
+        var para = document.createElement("p");
+        var node = document.createTextNode(text3);
+        para.appendChild(node);
+        var element = document.getElementById("div2");
+        element.appendChild(para);
+      } else if (yy == true) {
+        text3 = "This is a Valid Email";
+        document.getElementById("div2").innerHTML = text3;
+        document.getElementById("div2").style.color = "green";
       }
 
     }
