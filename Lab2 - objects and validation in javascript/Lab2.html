@@ -86,6 +86,19 @@
     padding: 0 10px;
     margin-top: 0;
   }
+
+  h3 {
+    text-align: center;
+    color: #0f0f0f;
+  }
+
+  #object {
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    color: #353535;
+    ;
+  }
 </style>
 
 <body>
@@ -105,6 +118,17 @@
         <div id="div4" class="alertx"></div>
 
         <button id="submit" onclick="formValidation()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="action-btn">
+      <div class="big">
+        <h3>Car</h3>
+        <p id="object">
+        </p>
+        <button id="button" onclick="getCar()">Get Car</button>
       </div>
     </div>
   </div>
@@ -191,6 +215,21 @@
         // change color using javascript 
         document.getElementById("div4").style.color = "green";
       }
+    }
+
+    function getCar() {
+      var car = {
+        name: "Fiat",
+        model: "500",
+        color: "white",
+        weight: "850 kg",
+        price: "50000 €"
+      };
+      document.getElementById("object").innerHTML = "Name: " + car.name +
+        "<br>" + "Model: " + car.model +
+        "<br> " + "Color: " + car.color +
+        "<br> " + "Weight: " + car.weight +
+        "<br> " + "Price: " + car.price;
     }
   </script>
 
