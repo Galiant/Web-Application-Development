@@ -39,14 +39,14 @@
   }
 
   .big {
-    height: 450px;
+    height: 550px;
     background: #fff;
     box-shadow: 0 0 50px grey;
     padding: 30px 30px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
     margin-right: auto;
     margin-left: auto;
   }
@@ -99,9 +99,10 @@
         <div id="div2" class="alertx"></div>
 
         <input type="text" name="pass" id="pass" placeholder="Password">
+        <div id="div3" class="alertx"></div>
 
         <input type="number" name="robo" id="robo" placeholder="What is 5 + 3?">
-        <div id="div3" class="alertx"></div>
+        <div id="div4" class="alertx"></div>
 
         <button id="submit" onclick="formValidation()">Submit</button>
       </div>
@@ -156,20 +157,39 @@
         document.getElementById("div2").style.color = "green";
       }
 
-      // Get the value of the input field with id="robo" 
-      z = document.getElementById("robo").value;
-      // If x is a 8
-      if (z == 8) {
-        text4 = "You are human";
+      // Get the value of the input field with id="pass"
+      q = document.getElementById("pass").value;
+      qq = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(q);
+      if (qq == false) {
+        text4 = "Please Enter a Valid Password. At least one number, one lowercase, one uppercase letter and at least six characters!";
+        // create HTML tag 
         var para = document.createElement("p");
         var node = document.createTextNode(text4);
         para.appendChild(node);
         var element = document.getElementById("div3");
         element.appendChild(para);
+      } else if (qq == true) {
+        text4 = "This is a Valid Password";
+        document.getElementById("div3").innerHTML = text4;
+        // change color using javascript 
         document.getElementById("div3").style.color = "green";
-      } else if (z != 8) {
+      }
+
+      // Get the value of the input field with id="robo" 
+      z = document.getElementById("robo").value;
+      // If x is a 8
+      if (z != 8) {
         text5 = "Please enter a correct number!";
-        document.getElementById("div3").innerHTML = text5;
+        var para = document.createElement("p");
+        var node = document.createTextNode(text5);
+        para.appendChild(node);
+        var element = document.getElementById("div4");
+        element.appendChild(para);
+      } else if (z == 8) {
+        text5 = "You are human";
+        document.getElementById("div4").innerHTML = text5;
+        // change color using javascript 
+        document.getElementById("div4").style.color = "green";
       }
     }
   </script>
