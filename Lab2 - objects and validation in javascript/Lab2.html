@@ -92,7 +92,8 @@
     color: #0f0f0f;
   }
 
-  #object {
+  #object,
+  #array {
     text-align: center;
     font-size: 16px;
     line-height: 30px;
@@ -117,7 +118,7 @@
         <input type="number" name="robo" id="robo" placeholder="What is 5 + 3?">
         <div id="div4" class="alertx"></div>
 
-        <button id="submit" onclick="formValidation()">Submit</button>
+        <button id="submit" onclick="formValidation()">Submit Form</button>
       </div>
     </div>
   </div>
@@ -129,6 +130,17 @@
         <p id="object">
         </p>
         <button id="button" onclick="getCar()">Get Car</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="action-btn">
+      <div class="big">
+        <h3>Content of Array</h3>
+        <p id="array">
+        </p>
+        <button id="button" onclick="getProgLang()">Get Content</button>
       </div>
     </div>
   </div>
@@ -230,6 +242,11 @@
         "<br> " + "Color: " + car.color +
         "<br> " + "Weight: " + car.weight +
         "<br> " + "Price: " + car.price;
+    }
+
+    function getProgLang() {
+      var progLang = ["JavaScript", "Ruby", "PHP", "Python", "C", "Java"];
+      document.getElementById("array").innerHTML = progLang.join("<br>");
     }
   </script>
 
