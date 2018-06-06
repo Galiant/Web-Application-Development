@@ -137,10 +137,13 @@
   <div class="container">
     <div class="action-btn">
       <div class="big">
-        <h3>Content of Array</h3>
+        <h3>Programming Languages</h3>
         <p id="array">
         </p>
-        <button id="button" onclick="getProgLang()">Get Content</button>
+
+        <input type="textbox" name="add" id="add" placeholder="Add Programming Language">
+
+        <button id="button" onclick="getProgLang();addProgLang();">Get Content</button>
       </div>
     </div>
   </div>
@@ -230,6 +233,7 @@
     }
 
     function getCar() {
+      // Car object
       var car = {
         name: "Fiat",
         model: "500",
@@ -237,6 +241,7 @@
         weight: "850 kg",
         price: "50000 €"
       };
+      // Output car object into HTML
       document.getElementById("object").innerHTML = "Name: " + car.name +
         "<br>" + "Model: " + car.model +
         "<br> " + "Color: " + car.color +
@@ -245,8 +250,19 @@
     }
 
     function getProgLang() {
-      var progLang = ["JavaScript", "Ruby", "PHP", "Python", "C", "Java"];
+      // Array of programming languages
+      progLang = ["JavaScript", "Ruby", "PHP", "Python", "C", "Java"];
+      // Output array in HTML
       document.getElementById("array").innerHTML = progLang.join("<br>");
+    }
+
+    function addProgLang() {
+      // Get the value of the input field with id="add"
+      ad = document.getElementById("add").value;
+      if (/\w/.test(ad)) {
+        progLang.push(ad);
+        document.getElementById("array").innerHTML = progLang.join("<br>");
+      }
     }
   </script>
 
