@@ -216,6 +216,14 @@
         $("#cssbutton").click(function () {
           $("#c1, #c2, #c6").css("background-color", "blue");
         });
+
+        $("#putUp").click(function () {
+          $("ol").append("<li> Liam: - " + comment.value + "</li>");
+        });
+
+        $("#AddToCart").click(function () {
+          $("#addedIn").slideDown(2000).delay(1000).slideUp(500);
+        });
       });
     </script>
 </body>
