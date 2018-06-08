@@ -57,7 +57,7 @@
   </header>
 
 
-  <div id="menu" class="w3-center">
+  <div id="menu" class="w3-center" style="display: none">
     <h2 id="compliment">Menu Shows and hides with the press of a button</h2>
     <button id="btn1" class="w3-btn w3-theme">Compliment</button>
     <button id="hide" class="w3-btn w3-theme">Hide</button>
@@ -193,6 +193,18 @@
 
         $("#show").click(function () {
           $("p").show();
+        });
+
+        $("#fade").click(function () {
+          $("#magic").fadeOut(1000);
+        });
+
+        $("#fadeBack").click(function () {
+          $("#magic").fadeIn(1000);
+        });
+
+        $("#flip").click(function () {
+          $("#menu").slideToggle(1000);
         });
       });
     </script>
